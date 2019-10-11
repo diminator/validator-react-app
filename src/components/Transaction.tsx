@@ -1,18 +1,9 @@
 import React from 'react'
+import { loader } from 'graphql.macro'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 
-const QUERY_TRANSACTION = gql`  
-  query Transaction($txHash: String) {
-        transaction(hash: $txHash) {
-          hash,
-          blockNumber,
-          value,
-          gasUsed,
-          gasPrice
-    }
-  }
-`
+const query = loader('./Transaction.graphql');
 
 type Props = { txHash: string } & typeof defaultProps;
 const defaultProps = {
@@ -21,7 +12,7 @@ const defaultProps = {
 
 const Transaction = (props: Props) => {
   const { txHash } = props
-  const { loading, error, data } = useQuery(QUERY_TRANSACTION, {
+  const { loading, error, data } = useQuery(gql`${query}`, {
     variables: { txHash },
   })
 

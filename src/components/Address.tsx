@@ -1,17 +1,9 @@
 import React from 'react'
+import {loader} from "graphql.macro";
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 
-const QUERY_ADDRESS = gql`  
-  query Address($addressHash: String) {
-        address(hash: $addressHash) {
-          contractCode,
-          fetchedCoinBalance,
-          fetchedCoinBalanceBlockNumber,
-          hash
-    }
-  }
-`
+const query = loader('./Address.graphql');
 
 type Props = { addressHash: string } & typeof defaultProps;
 const defaultProps = {
@@ -20,7 +12,7 @@ const defaultProps = {
 
 const Address = (props: Props) => {
   const { addressHash } = props
-  const { loading, error, data } = useQuery(QUERY_ADDRESS, {
+  const { loading, error, data } = useQuery(gql`${query}`, {
     variables: { addressHash },
   })
 

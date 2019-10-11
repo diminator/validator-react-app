@@ -1,0 +1,9 @@
+query Transaction($txHash: String) {
+  transaction(hash: $txHash) {
+    hash,
+    blockNumber,
+    value,
+    gasUsed,
+    gasPrice
+  }
+}

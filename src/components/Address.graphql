@@ -1,0 +1,8 @@
+query Address($addressHash: String) {
+  address(hash: $addressHash) {
+    contractCode,
+    fetchedCoinBalance,
+    fetchedCoinBalanceBlockNumber,
+    hash
+  }
+}
