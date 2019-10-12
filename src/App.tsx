@@ -6,7 +6,7 @@ import Routes from './Routes'
 import styles from './App.module.scss'
 
 const client = new ApolloClient({
-  uri: `${process.env.REACT_APP_URL_BLOCKSCOUT}/graphiql`,
+  uri: `${process.env.REACT_APP_URL_GRAPHQL}`,
 })
 
 export default class App extends Component {

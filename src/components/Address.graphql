@@ -1,8 +1,11 @@
-query Address($addressHash: String) {
-  address(hash: $addressHash) {
-    contractCode,
-    fetchedCoinBalance,
-    fetchedCoinBalanceBlockNumber,
+query Addresses($addressHash: bytea) {
+  addresses(where: {hash: {_eq: $addressHash}}) {
+    contract_code
+    decompiled
+    fetched_coin_balance
+    fetched_coin_balance_block_number
     hash
+    nonce
+    verified
   }
 }
