@@ -2,11 +2,22 @@
 
 .app {
     height: 100%;
+    max-width: $break-point--medium;
+    margin: 0 auto;
 
-    // for sticky footer
     display: flex;
     min-height: calc(100vh - #{$page-frame * 2});
     flex-direction: column;
+    font-family: monospace;
+
+    pre {
+        overflow-x: auto;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+    }
 }
 
 .main {

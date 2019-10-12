@@ -1,11 +1,16 @@
 query Addresses($addressHash: bytea) {
-  addresses(where: {hash: {_eq: $addressHash}}) {
-    contract_code
-    decompiled
-    fetched_coin_balance
-    fetched_coin_balance_block_number
-    hash
-    nonce
-    verified
-  }
+    addresses(where: {hash: {_eq: $addressHash}}) {
+        contract_code
+        decompiled
+        fetched_coin_balance
+        fetched_coin_balance_block_number
+        hash
+        nonce
+        verified
+        transactions {
+            hash
+            to_address_hash
+            value
+        }
+    }
 }

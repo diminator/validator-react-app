@@ -1,0 +1,6 @@
+query AddresessOrderedByBalance {
+    addresses(order_by: {fetched_coin_balance: desc}) {
+        fetched_coin_balance
+        hash
+    }
+}

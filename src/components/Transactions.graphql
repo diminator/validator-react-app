@@ -1,0 +1,10 @@
+query TransactionsOrderedByBlockNumber {
+    transactions(order_by: {block_number: desc}) {
+        block_number
+        from_address_hash
+        gas_used
+        hash
+        to_address_hash
+        value
+    }
+}

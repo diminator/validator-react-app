@@ -1,0 +1,9 @@
+@import '../styles/variables';
+
+.transactionsPage {
+    display: block;
+
+    form {
+        margin-bottom: $spacer * 3;
+    }
+}

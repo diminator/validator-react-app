@@ -1,0 +1,15 @@
+@import '../styles/variables';
+
+.addressRow {
+  display: flex;
+}
+
+.addressHash {
+  flex-grow: 2;
+
+}
+
+.addressBalance {
+  flex-grow: 1;
+  text-align: right;
+}

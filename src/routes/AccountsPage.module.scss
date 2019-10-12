@@ -1,0 +1,9 @@
+@import '../styles/variables';
+
+.accountsPage {
+    display: block;
+
+    form {
+        margin-bottom: $spacer * 3;
+    }
+}
