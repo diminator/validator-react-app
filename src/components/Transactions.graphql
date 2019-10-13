@@ -1,5 +1,5 @@
-query TransactionsOrderedByBlockNumber {
-    transactions(order_by: {block_number: desc}) {
+subscription RecentTransactions {
+    transactions(order_by: {block_number: desc}, limit: 20) {
         block_number
         from_address_hash
         gas_used

@@ -1,0 +1,7 @@
+subscription RecentBlocks($blockNumber: bigint) {
+    blocks(order_by: {number: desc}, limit: 10) {
+        hash
+        number
+        size
+      }
+}

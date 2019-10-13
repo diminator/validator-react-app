@@ -4,13 +4,11 @@ import { useSubscription } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 import { loader } from 'graphql.macro'
 import decodeHash from '../utils/decodeHash'
-import styles from './Addresses.module.scss'
+import styles from './Blocks.module.scss'
 
-const query = loader('./Addresses.graphql')
+const query = loader('./Blocks.graphql')
 
-type Props = {};
-
-const Addresses = (props: Props) => {
+const Blocks = () => {
   const { loading, error, data } = useSubscription(gql`${query}`, {})
 
   if (loading) return <p>Loading...</p>
@@ -25,16 +23,14 @@ const Addresses = (props: Props) => {
   return (
     <div>
       {
-        data.addresses.map((address: any) => {
+        data.blocks.map((block: any) => {
           return (
-            <div key={ address.hash } className={ styles.addressRow }>
-              <Link to={ `/accounts/${ decodeHash(address.hash) }` }>
-                <div className={ styles.addressHash }>
-                  { decodeHash(address.hash) }
-                </div>
+            <div key={ block.hash } className={ styles.blockRow }>
+              <Link to={ `/blocks/${ decodeHash(block.hash) }` }>
+                <div>{ decodeHash(block.hash) }</div>
               </Link>
-              <div className={ styles.addressBalance }>
-                { address.fetched_coin_balance }
+              <div className={ styles.blockBody }>
+                <div>block number: { block.number }</div>
               </div>
             </div>
           )
@@ -44,4 +40,4 @@ const Addresses = (props: Props) => {
   )
 }
 
-export default Addresses
+export default Blocks
