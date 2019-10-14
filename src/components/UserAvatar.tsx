@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 import styles from './UserAvatar.module.scss'
 import { User } from '../context'
-import { Link } from "react-router-dom";
 
 export default class UserAvatar extends Component {
   public render() {

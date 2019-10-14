@@ -9,7 +9,7 @@ interface Props {
   addressHash: string
 }
 
-const Address = (props: Props) => {
+const Account = (props: Props) => {
   const { addressHash } = props
 
   return (
@@ -19,4 +19,4 @@ const Address = (props: Props) => {
   )
 }
 
-export default Address
+export default Account

@@ -1,9 +1,19 @@
 query Block($blockHash: bytea) {
     blocks(where: {hash: {_eq: $blockHash}}) {
-        difficulty
-        internal_transactions_indexed_at
-        refetch_needed
         size
-        total_difficulty
+        consensus
+        gas_limit
+        gas_used
+        hash
+        miner_hash
+        nonce
+        number
+        parent_hash
+        timestamp
+        transactions {
+            hash
+            to_address_hash
+            value
+        }
     }
 }

@@ -1,8 +1,12 @@
 @import '../styles/variables';
 
 .nav {
+    margin-top: 1em;
+}
+
+.navRow {
     display: flex;
-    padding: 1.4em;
+    padding: 0 0 1.4em 0;
     font-size: 1.1em;
     a {
         flex: 1;

@@ -1,25 +1,16 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import Content from '../components/Content'
 import styles from './AccountsPage.module.scss'
-import Addresses from '../components/Addresses'
+import Accounts from '../components/Accounts'
 
-interface Props {
-}
-
-interface State {
-}
-
-class AccountsPage extends PureComponent<Props, State> {
-  public render() {
-    return (
-      <div className={ styles.accountPage }>
-        <Content wide>
-          <h2 className={ styles.title }>Accounts</h2>
-          <Addresses/>
-        </Content>
-      </div>
-    )
-  }
+const AccountsPage = () => {
+  return (
+    <div className={ styles.accountPage }>
+      <Content wide>
+        <Accounts/>
+      </Content>
+    </div>
+  )
 }
 
 export default AccountsPage

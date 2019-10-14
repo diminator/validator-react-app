@@ -1,11 +1,13 @@
 import React, { PureComponent } from 'react'
+import { newKitFromWeb3 } from '@celo/contractkit'
 import Web3 from 'web3'
 import { User } from '.'
 import { MetamaskProvider } from './MetamaskProvider'
+import { Validator } from "@celo/contractkit/lib/wrappers/Validators";
 
 const nodeUri = "http://localhost:8545"
 const POLL_ACCOUNTS = 1000 // every 1s
-const POLL_NETWORK = POLL_ACCOUNTS * 60 // every 1 min
+const POLL_NETWORK = POLL_ACCOUNTS * 3 // every 3s
 const DEFAULT_WEB3 = new Web3(new Web3.providers.HttpProvider(nodeUri)) // default web3
 
 // taken from
@@ -52,7 +54,7 @@ interface UserProviderState {
   network: string
   web3: Web3
   balance: string
-
+  validators: Validator[]
   loginMetamask(): Promise<any>
 
   message: string
@@ -84,6 +86,7 @@ export default class UserProvider extends PureComponent<{}, UserProviderState> {
     web3: DEFAULT_WEB3,
     account: '',
     balance: '-',
+    validators: [],
     loginMetamask: () => this.loginMetamask(),
     message: 'Connecting to Web3...'
   }
@@ -106,7 +109,7 @@ export default class UserProvider extends PureComponent<{}, UserProviderState> {
 
   private initNetworkPoll() {
     if (!this.networkInterval) {
-      this.networkInterval = setInterval(this.fetchNetwork, POLL_NETWORK)
+      this.networkInterval = setInterval(this.fetchValidators, POLL_NETWORK)
     }
   }
 
@@ -127,7 +130,7 @@ export default class UserProvider extends PureComponent<{}, UserProviderState> {
     this.setState({ isLoading: false }, () => {
       this.initNetworkPoll()
       this.initAccountsPoll()
-      this.fetchNetwork()
+      this.fetchValidators()
       this.fetchAccounts()
     })
   }
@@ -199,11 +202,16 @@ export default class UserProvider extends PureComponent<{}, UserProviderState> {
     const { web3 } = this.state
     const balance = await web3.eth.getBalance(account)
     if (balance !== this.state.balance) {
-      this.setState({ balance: balance })
+      this.setState({ balance })
     }
   }
 
-  private fetchNetwork = async () => {
+  private fetchValidators = async () => {
+    const kit = newKitFromWeb3(this.state.web3)
+    const validatorContract = await kit.contracts.getValidators()
+    const validators = await validatorContract.getRegisteredValidators()
+    this.setState({ validators })
+    console.log('fetched validators')
   }
 
 

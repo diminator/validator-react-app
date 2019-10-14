@@ -4,13 +4,13 @@ import { useSubscription } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 import { loader } from 'graphql.macro'
 import decodeHash from '../utils/decodeHash'
-import styles from './Addresses.module.scss'
+import styles from './Accounts.module.scss'
 
 const query = loader('./Addresses.graphql')
 
 type Props = {}
 
-const Addresses = (props: Props) => {
+const Accounts = (props: Props) => {
   const { loading, error, data } = useSubscription(gql`${query}`, {})
 
   if (loading) return <p>Loading...</p>
@@ -24,6 +24,7 @@ const Addresses = (props: Props) => {
   )
   return (
     <div>
+      <h2>Accounts ({ data.addresses.length })</h2>
       {
         data.addresses.map((address: any) => {
           return (
@@ -44,4 +45,4 @@ const Addresses = (props: Props) => {
   )
 }
 
-export default Addresses
+export default Accounts

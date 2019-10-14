@@ -22,6 +22,9 @@ const Blocks = () => {
   )
   return (
     <div>
+      <h2 className={ styles.title }>
+        Blocks ({ data.blocks[0].number })
+      </h2>
       {
         data.blocks.map((block: any) => {
           return (
@@ -30,7 +33,13 @@ const Blocks = () => {
                 <div>{ decodeHash(block.hash) }</div>
               </Link>
               <div className={ styles.blockBody }>
-                <div>block number: { block.number }</div>
+                <div>number: { block.number }</div>
+                <div>size: { block.size }</div>
+                <div>mined by: { block.miner_hash }</div>
+                <div>timestamp: { block.timestamp }</div>
+                <div>transactions:
+                  { block.transactions_aggregate.aggregate.count }
+                </div>
               </div>
             </div>
           )

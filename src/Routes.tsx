@@ -7,6 +7,7 @@ import BlocksPage from './routes/BlocksPage'
 import StatsPage from './routes/StatsPage'
 import TransactionPage from './routes/TransactionPage'
 import TransactionsPage from './routes/TransactionsPage'
+import ValidatorsPage from './routes/ValidatorsPage'
 
 const Routes = () => (
   <Switch>
@@ -18,6 +19,7 @@ const Routes = () => (
     <Route component={ AccountPage } exact path="/accounts/:id"/>
     <Route component={ TransactionsPage } exact path="/transactions"/>
     <Route component={ TransactionPage } exact path="/transactions/:id"/>
+    <Route component={ ValidatorsPage } exact path="/validators"/>
   </Switch>
 )
 

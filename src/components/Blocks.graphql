@@ -1,7 +1,14 @@
 subscription RecentBlocks($blockNumber: bigint) {
     blocks(order_by: {number: desc}, limit: 20) {
-        hash
-        number
         size
-      }
+        hash
+        miner_hash
+        number
+        timestamp
+        transactions_aggregate {
+            aggregate {
+                count
+            }
+        }
+    }
 }

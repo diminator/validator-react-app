@@ -1,0 +1,7 @@
+subscription TransactionCount {
+    transactions_aggregate {
+        aggregate {
+            count
+        }
+    }
+}

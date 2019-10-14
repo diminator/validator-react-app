@@ -1,0 +1,9 @@
+@import '../styles/variables';
+
+.validatorsPage {
+    display: block;
+
+    form {
+        margin-bottom: $spacer * 3;
+    }
+}

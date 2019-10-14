@@ -16,7 +16,7 @@ const Transactions = () => {
     <div>
       <p>Error...</p>
       <pre>
-        { JSON.stringify(error ? error : data, null, 2) }
+        { JSON.stringify(error) }
       </pre>
     </div>
   )
@@ -42,7 +42,6 @@ const Transactions = () => {
           )
         })
       }
-
     </div>
   )
 }
