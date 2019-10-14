@@ -3,7 +3,9 @@ import React, { PureComponent } from 'react'
 interface Props {
   blocks: any
 }
-interface State {}
+
+interface State {
+}
 
 class BlockStats extends PureComponent<Props, State> {
   public render() {
@@ -14,7 +16,7 @@ class BlockStats extends PureComponent<Props, State> {
     }
     return (
       <pre>
-        { JSON.stringify(blocks[0].block, null, 2)}
+        { JSON.stringify(blocks[0].block, null, 2) }
       </pre>
     )
   }

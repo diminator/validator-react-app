@@ -3,8 +3,11 @@ import Content from '../components/Content'
 import styles from './StatsPage.module.scss'
 import EthStats from "../components/EthStats"
 
-interface Props {}
-interface State {}
+interface Props {
+}
+
+interface State {
+}
 
 class StatsPage extends PureComponent<Props, State> {
   public render() {

@@ -8,7 +8,7 @@ import styles from './Addresses.module.scss'
 
 const query = loader('./Addresses.graphql')
 
-type Props = {};
+type Props = {}
 
 const Addresses = (props: Props) => {
   const { loading, error, data } = useSubscription(gql`${query}`, {})

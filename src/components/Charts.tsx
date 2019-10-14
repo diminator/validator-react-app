@@ -3,7 +3,9 @@ import React, { PureComponent } from 'react'
 interface Props {
   charts: any
 }
-interface State {}
+
+interface State {
+}
 
 class Charts extends PureComponent<Props, State> {
   public render() {

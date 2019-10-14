@@ -13,8 +13,8 @@ const defaultProps = {
 const Transaction = (props: Props) => {
   const { txHash } = props
   return (
-    <QueryResult query={query}
-                 options={{variables: {txHash: encodeHash(txHash)}}}
+    <QueryResult query={ query }
+                 options={ { variables: { txHash: encodeHash(txHash) } } }
     />
   )
 }

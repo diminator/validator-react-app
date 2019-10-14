@@ -3,8 +3,11 @@ import Content from '../components/Content'
 import styles from './AccountsPage.module.scss'
 import Addresses from '../components/Addresses'
 
-interface Props {}
-interface State {}
+interface Props {
+}
+
+interface State {
+}
 
 class AccountsPage extends PureComponent<Props, State> {
   public render() {

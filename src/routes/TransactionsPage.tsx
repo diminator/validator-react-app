@@ -3,8 +3,11 @@ import Content from '../components/Content'
 import styles from './TransactionsPage.module.scss'
 import Transactions from "../components/Transactions";
 
-interface Props {}
-interface State {}
+interface Props {
+}
+
+interface State {
+}
 
 class TransactionsPage extends PureComponent<Props, State> {
   public render() {

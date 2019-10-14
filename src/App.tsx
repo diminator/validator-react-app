@@ -29,7 +29,7 @@ export default class App extends Component {
         <Router>
           <ApolloProvider client={ createApolloClient() }>
             <div className={ styles.app }>
-              <Navigation />
+              <Navigation/>
               <main className={ styles.main }>
                 <Routes/>
               </main>

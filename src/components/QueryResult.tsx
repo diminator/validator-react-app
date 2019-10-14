@@ -12,7 +12,7 @@ const QueryResult = (props: Props) => {
   const { loading, error, data } = useQuery(gql`${query}`, options)
 
   if (loading) return <p>Loading...</p>
-  
+
   return (
     <div>
       <pre>

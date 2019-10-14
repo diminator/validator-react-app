@@ -8,10 +8,10 @@ export default class UserAvatar extends Component {
     const { account, balance } = this.context
     return (
       <div className={ styles.container }>
-        <span className={ !!account ? styles.dotGreen : styles.dotRed }></span>
+        <span className={ !!account ? styles.dotGreen : styles.dotRed } />
         { !!account ? (
           <Link to={ `/accounts/${ account }` }>
-            { `(${(balance/1e18).toFixed(2)}) ${account}` }
+            { `(${ (balance / 1e18).toFixed(2) }) ${ account }` }
           </Link>
         ) : "Connect to Web3"
         }

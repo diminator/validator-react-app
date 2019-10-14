@@ -10,7 +10,9 @@ interface Props {
     }
   }
 }
-interface State {}
+
+interface State {
+}
 
 class BlockPage extends PureComponent<Props, State> {
   public render() {

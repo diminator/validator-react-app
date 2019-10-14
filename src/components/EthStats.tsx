@@ -5,11 +5,14 @@ import Stats from "./Stats"
 import BlockStats from "./BlockStats"
 import ClientStats from "./ClientStats"
 
-interface Props {}
+interface Props {
+}
+
 interface Event {
   action: string,
   data: any
 }
+
 interface State {
   ws: ReconnectingWebSocket,
   events: Event[]
@@ -42,7 +45,7 @@ class EthStats extends Component<Props, State> {
     const { events } = this.state
     events.push(event)
 
-    if ( event.action === "client-ping") {
+    if (event.action === "client-ping") {
       event.data.clientTime = (new Date()).getTime()
     }
     this.setState({ events })
@@ -51,10 +54,10 @@ class EthStats extends Component<Props, State> {
   public render() {
     return (
       <div>
-        <ClientStats ping={this.getDataByAction("client-ping")} />
-        <Stats stats={this.getDataByAction("stats")} />
-        <BlockStats blocks={this.getDataByAction("block")} />
-        <Charts charts={this.getDataByAction("charts")} />
+        <ClientStats ping={ this.getDataByAction("client-ping") }/>
+        <Stats stats={ this.getDataByAction("stats") }/>
+        <BlockStats blocks={ this.getDataByAction("block") }/>
+        <Charts charts={ this.getDataByAction("charts") }/>
       </div>
     )
   }

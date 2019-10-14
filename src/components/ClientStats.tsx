@@ -3,7 +3,9 @@ import React, { PureComponent } from 'react'
 interface Props {
   ping: any
 }
-interface State {}
+
+interface State {
+}
 
 class ClientStats extends PureComponent<Props, State> {
   public render() {
@@ -14,7 +16,7 @@ class ClientStats extends PureComponent<Props, State> {
     }
     return (
       <div>
-        latency: { (ping[0].clientTime - ping[0].serverTime)/1000 }s
+        latency: { (ping[0].clientTime - ping[0].serverTime) / 1000 }s
       </div>
     )
   }
