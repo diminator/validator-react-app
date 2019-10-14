@@ -1,4 +1,4 @@
-query Addresses($addressHash: bytea) {
+query Address($addressHash: bytea) {
     addresses(where: {hash: {_eq: $addressHash}}) {
         contract_code
         decompiled

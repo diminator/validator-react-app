@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import ApolloClient from 'apollo-client'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { WebSocketLink } from 'apollo-link-ws'
@@ -26,6 +26,12 @@ export default class App extends Component {
       <Router>
         <ApolloProvider client={ createApolloClient() }>
           <div className={ styles.app }>
+            <div className={ styles.nav }>
+              <Link to="/stats">stats</Link>
+              <Link to="/blocks">blocks</Link>
+              <Link to="/transactions">transactions</Link>
+              <Link to="/accounts">accounts</Link>
+            </div>
             <main className={ styles.main }>
               <Routes/>
             </main>

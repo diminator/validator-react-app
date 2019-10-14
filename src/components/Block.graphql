@@ -1,0 +1,9 @@
+query Block($blockHash: bytea) {
+    blocks(where: {hash: {_eq: $blockHash}}) {
+        difficulty
+        internal_transactions_indexed_at
+        refetch_needed
+        size
+        total_difficulty
+    }
+}
