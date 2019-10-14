@@ -1,5 +1,5 @@
 subscription RecentBlocks($blockNumber: bigint) {
-    blocks(order_by: {number: desc}, limit: 10) {
+    blocks(order_by: {number: desc}, limit: 20) {
         hash
         number
         size

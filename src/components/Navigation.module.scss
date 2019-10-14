@@ -1,0 +1,10 @@
+@import '../styles/variables';
+
+.nav {
+    display: flex;
+    padding: 1.4em;
+    font-size: 1.1em;
+    a {
+        flex: 1;
+    }
+}

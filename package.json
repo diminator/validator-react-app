@@ -3,12 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@apollo/react-hooks": "^3.1.2",
-    "@types/jest": "24.0.18",
-    "@types/node": "12.7.12",
-    "@types/react": "16.9.5",
-    "@types/react-dom": "16.9.1",
-    "@types/react-router-dom": "^5.1.0",
     "apollo-boost": "^0.4.4",
     "apollo-link-ws": "^1.0.19",
     "graphql": "^14.5.8",
@@ -21,7 +15,18 @@
     "react-websocket": "^2.1.0",
     "reconnecting-websocket": "^4.2.0",
     "subscriptions-transport-ws": "^0.9.16",
-    "typescript": "3.6.4"
+    "truffle-hdwallet-provider": "^1.0.17",
+    "typescript": "3.6.4",
+    "web3": "^1.2.1"
+  },
+  "devDependencies": {
+    "@apollo/react-hooks": "^3.1.2",
+    "@types/jest": "24.0.18",
+    "@types/node": "12.7.12",
+    "@types/react": "16.9.5",
+    "@types/react-dom": "16.9.1",
+    "@types/react-router-dom": "^5.1.0",
+    "@types/web3": "^1.0.20"
   },
   "scripts": {
     "start": "react-scripts start",
