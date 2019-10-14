@@ -29,7 +29,11 @@ class Validators extends PureComponent<Props, State> {
                   <div>id: { validator.id }</div>
                   <div>name: { validator.name }</div>
                   <div>url: { validator.url }</div>
-                  <div>affiliation: { validator.affiliation }</div>
+                  <div>affiliation:
+                    <Link to={`/validatorgroups/${validator.affiliation}`}>
+                      { validator.affiliation }
+                    </Link>
+                  </div>
                 </div>
               </div>
             )

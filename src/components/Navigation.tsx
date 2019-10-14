@@ -11,10 +11,11 @@ const Navigation = () => {
         <Link to="/blocks">blocks</Link>
         <Link to="/transactions">transactions</Link>
         <Link to="/accounts">accounts</Link>
-        <UserAvatar/>
-      </div>
-      <div className={ styles.navRow }>
+        <div className={ styles.navItem }>
+          <UserAvatar />
+        </div>
         <Link to="/validators">validators</Link>
+        <Link to="/validatorgroups">validatorgroups</Link>
       </div>
     </div>
   )

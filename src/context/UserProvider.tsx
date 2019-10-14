@@ -3,7 +3,10 @@ import { newKitFromWeb3 } from '@celo/contractkit'
 import Web3 from 'web3'
 import { User } from '.'
 import { MetamaskProvider } from './MetamaskProvider'
-import { Validator } from "@celo/contractkit/lib/wrappers/Validators";
+import {
+  Validator,
+  ValidatorGroup
+} from "@celo/contractkit/lib/wrappers/Validators"
 
 const nodeUri = "http://localhost:8545"
 const POLL_ACCOUNTS = 1000 // every 1s
@@ -55,8 +58,8 @@ interface UserProviderState {
   web3: Web3
   balance: string
   validators: Validator[]
+  validatorGroups: ValidatorGroup[]
   loginMetamask(): Promise<any>
-
   message: string
 }
 
@@ -87,6 +90,7 @@ export default class UserProvider extends PureComponent<{}, UserProviderState> {
     account: '',
     balance: '-',
     validators: [],
+    validatorGroups: [],
     loginMetamask: () => this.loginMetamask(),
     message: 'Connecting to Web3...'
   }
@@ -210,7 +214,8 @@ export default class UserProvider extends PureComponent<{}, UserProviderState> {
     const kit = newKitFromWeb3(this.state.web3)
     const validatorContract = await kit.contracts.getValidators()
     const validators = await validatorContract.getRegisteredValidators()
-    this.setState({ validators })
+    const validatorGroups = await validatorContract.getRegisteredValidatorGroups()
+    this.setState({ validators, validatorGroups })
     console.log('fetched validators')
   }
 
