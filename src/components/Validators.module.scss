@@ -4,6 +4,14 @@
   margin: 1rem 0;
 }
 
+.validatorRow:hover {
+  background-color: black;
+  color: white;
+  a {
+    color: white;
+  }
+}
+
 .validatorBody {
   margin: 0.5rem 0.5rem;
   overflow: hidden;

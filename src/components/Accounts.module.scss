@@ -4,6 +4,14 @@
   display: flex;
 }
 
+.addressRow:hover {
+  background-color: black;
+  color: white;
+  a {
+    color: white;
+  }
+}
+
 .addressHash {
   flex-grow: 2;
 }

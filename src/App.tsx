@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
+import getenv from 'getenv'
 import ApolloClient from 'apollo-client'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { WebSocketLink } from 'apollo-link-ws'
@@ -9,7 +10,7 @@ import styles from './App.module.scss'
 import UserProvider from "./context/UserProvider"
 import Navigation from "./components/Navigation"
 
-const graphqlURI: string = `${ process.env.REACT_APP_URL_GRAPHQL }`
+const graphqlURI = getenv("REACT_APP_WS_GRAPHQL", "ws://localhost:8080/v1/graphql")
 
 export default class App extends Component {
   public render() {

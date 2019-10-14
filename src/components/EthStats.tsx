@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReconnectingWebSocket from "reconnecting-websocket"
+import getenv from 'getenv'
 import Charts from "./Charts"
 import Stats from "./Stats"
 import BlockStats from "./BlockStats"
@@ -18,11 +19,13 @@ interface State {
   events: Event[]
 }
 
+const ethstatsURI = getenv("REACT_APP_WS_ETHSTATS", "ws://localhost:3000/primus/")
+
 class EthStats extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
 
-    const ws = new ReconnectingWebSocket('ws://localhost:3000/primus/')
+    const ws = new ReconnectingWebSocket(ethstatsURI)
 
     ws.addEventListener('message', (event) => {
       this.putEvent(JSON.parse(event.data))
