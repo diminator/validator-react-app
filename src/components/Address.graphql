@@ -1,4 +1,4 @@
-query Address($addressHash: bytea) {
+subscription Address($addressHash: bytea) {
     addresses(where: {hash: {_eq: $addressHash}}) {
         contract_code
         decompiled
@@ -7,7 +7,7 @@ query Address($addressHash: bytea) {
         hash
         nonce
         verified
-        transactions {
+        transactions(order_by: {block_number: desc}) {
             hash
             to_address_hash
             value

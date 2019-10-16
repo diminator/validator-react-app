@@ -1,4 +1,4 @@
-query Block($blockHash: bytea) {
+subscription Block($blockHash: bytea) {
     blocks(where: {hash: {_eq: $blockHash}}) {
         size
         consensus

@@ -11,7 +11,7 @@ export default class UserAvatar extends Component {
         <span className={ !!account ? styles.dotGreen : styles.dotRed } />
         { !!account ? (
           <Link to={ `/accounts/${ account }` }>
-            { `(${ (balance / 1e18).toFixed(2) }) ${ account }` }
+            { `${ account.substr(0, 6) }.. (${ (balance / 1e18).toFixed(2) }cG) ` }
           </Link>
         ) : "Connect to Web3"
         }

@@ -10,10 +10,10 @@ const Navigation = () => {
         <Link to="/stats">stats</Link>
         <Link to="/blocks">blocks</Link>
         <Link to="/transactions">transactions</Link>
-        <Link to="/accounts">accounts</Link>
         <div className={ styles.navItem }>
           <UserAvatar />
         </div>
+        <Link to="/accounts">accounts</Link>
         <Link to="/validators">validators</Link>
         <Link to="/validatorgroups">validatorgroups</Link>
       </div>

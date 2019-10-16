@@ -1,5 +1,5 @@
 import React from 'react'
-import { useQuery } from '@apollo/react-hooks'
+import { useSubscription } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 
 const QueryResult = (props: Props) => {
   const { query, options } = props
-  const { loading, error, data } = useQuery(gql`${query}`, options)
+  const { loading, error, data } = useSubscription(gql`${query}`, options)
 
   if (loading) return <p>Loading...</p>
 

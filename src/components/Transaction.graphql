@@ -1,4 +1,4 @@
-query Transaction($txHash: bytea) {
+subscription Transaction($txHash: bytea) {
     transactions(where: {hash: {_eq: $txHash}}) {
         block_hash
         block_number

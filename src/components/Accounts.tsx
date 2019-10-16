@@ -33,7 +33,7 @@ const Accounts = () => {
                 </div>
               </Link>
               <div className={ styles.addressBalance }>
-                { address.fetched_coin_balance }
+                { (address.fetched_coin_balance / 1e18).toFixed(18) } cGLD
               </div>
             </div>
           )

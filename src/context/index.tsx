@@ -6,6 +6,7 @@ export const User = React.createContext({
   isWeb3Capable: false,
   isLoading: false,
   account: '',
+  balance: '',
   web3: {},
   network: '',
   loginMetamask: () => {

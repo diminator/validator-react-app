@@ -59,7 +59,9 @@ interface UserProviderState {
   balance: string
   validators: Validator[]
   validatorGroups: ValidatorGroup[]
+
   loginMetamask(): Promise<any>
+
   message: string
 }
 
@@ -185,7 +187,6 @@ export default class UserProvider extends PureComponent<{}, UserProviderState> {
         // await this.unlockAccounts()
       }
       accounts = await web3.eth.getAccounts()
-
       if (accounts.length > 0) {
         const account = accounts[0]
 
@@ -194,8 +195,8 @@ export default class UserProvider extends PureComponent<{}, UserProviderState> {
             account,
             isLogged: true
           })
-          await this.fetchBalance(account)
         }
+        await this.fetchBalance(account)
       } else {
         !isLogged && this.setState({ isLogged: false, account: '' })
       }
@@ -205,6 +206,7 @@ export default class UserProvider extends PureComponent<{}, UserProviderState> {
   private fetchBalance = async (account: string) => {
     const { web3 } = this.state
     const balance = await web3.eth.getBalance(account)
+    console.info(`[web3] fetched balance: ${ balance }`)
     if (balance !== this.state.balance) {
       this.setState({ balance })
     }
@@ -216,7 +218,7 @@ export default class UserProvider extends PureComponent<{}, UserProviderState> {
     const validators = await validatorContract.getRegisteredValidators()
     const validatorGroups = await validatorContract.getRegisteredValidatorGroups()
     this.setState({ validators, validatorGroups })
-    console.log('fetched validators')
+    console.info(`[web3] fetched ${ validators.length } validators`)
   }
 
 
