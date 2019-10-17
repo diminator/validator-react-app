@@ -1,7 +1,9 @@
 // Colors
 
-/* Dark */
-$celo-background--dark: #2E3338;
+
+// Colors
+$celo-green: #35D07F;
+$celo-black: #2E3338;
 $celo-font: monospace;
 
 // Sizes
@@ -17,3 +19,7 @@ $brand-border-width: 1px;
 $border-radius: .2rem;
 
 $narrowWidth: 35rem;
+
+
+/* Dark */
+$celo-background--dark: $celo-black;

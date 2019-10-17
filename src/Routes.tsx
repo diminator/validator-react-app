@@ -10,20 +10,21 @@ import TransactionsPage from './routes/TransactionsPage'
 import ValidatorsPage from './routes/ValidatorsPage'
 import ValidatorGroupPage from "./routes/ValidatorGroupPage"
 import ValidatorGroupsPage from "./routes/ValidatorGroupsPage"
+import StakeOffPage from "./routes/StakeOffPage"
 
 const Routes = () => (
   <Switch>
-    <Route component={ StatsPage } exact path="/"/>
-    <Route component={ StatsPage } exact path="/stats"/>
-    <Route component={ BlocksPage } exact path="/blocks"/>
-    <Route component={ BlockPage } exact path="/blocks/:id"/>
+    <Route component={ StakeOffPage } exact path="/"/>
     <Route component={ AccountsPage } exact path="/accounts/"/>
     <Route component={ AccountPage } exact path="/accounts/:id"/>
-    <Route component={ TransactionsPage } exact path="/transactions"/>
+    <Route component={ BlockPage } exact path="/blocks/:id"/>
+    <Route component={ BlocksPage } exact path="/blocks"/>
+    <Route component={ StatsPage } exact path="/stats"/>
     <Route component={ TransactionPage } exact path="/transactions/:id"/>
+    <Route component={ TransactionsPage } exact path="/transactions"/>
     <Route component={ ValidatorsPage } exact path="/validators"/>
-    <Route component={ ValidatorGroupsPage } exact path="/validatorgroups"/>
     <Route component={ ValidatorGroupPage } exact path="/validatorgroups/:id"/>
+    <Route component={ ValidatorGroupsPage } exact path="/validatorgroups"/>
   </Switch>
 )
 

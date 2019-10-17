@@ -1,0 +1,101 @@
+@import '../../styles/variables';
+
+
+@keyframes scale-in-hor-left {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+
+.leaderBoard {
+    margin: 2em 0;
+    button:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+}
+
+
+.leaderBoardRow {
+    margin: 1.4em 0;
+
+    a {
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 18px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .progressBar {
+
+	-webkit-animation: scale-in-hor-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-hor-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+        display: flex;
+
+        hr {
+            border-top: 1px solid $celo-green;
+            border-bottom: 0;
+            border-left: 0;
+            border-right: 0;
+        }
+
+    }
+}
+
+.leaderBoardAxis {
+    display: flex;
+}
+
+.leaderBoardItem {
+    flex: 1;
+
+    svg {
+        width: 12px;
+        height: 15px;
+    }
+}
+
+.stakeOffRow:hover {
+    background-color: black;
+    color: white;
+
+    a {
+        color: white;
+    }
+}
+
+.stakeOffFooter {
+    text-align: center;
+
+    button {
+        background: transparent;
+        border: none;
+        color: $celo-green;
+    }
+}

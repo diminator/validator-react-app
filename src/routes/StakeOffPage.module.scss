@@ -1,0 +1,39 @@
+@import '../styles/variables';
+
+.stakeOffPage {
+    display: block;
+    padding: 4em 0;
+    background: #2E3338;
+    color: white;
+    font-family: garamond-courier-pro;
+    h1 {
+        font-size: 32px;
+    }
+    .title {
+        text-align: center;
+        margin-bottom: 4em;
+        h1 {
+            margin-top: 0;
+            margin-bottom: 0.4em;
+        }
+        h1:first-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .subTitle {
+        font-weight: 300;
+        font-style: italic;
+    }
+    .leaderBoard {
+        h1, h3 {
+          margin: 0.2em 0;
+        }
+    }
+}
+
+.celoRings {
+    width: 50%;
+    margin: auto;
+    padding: 3em;
+}

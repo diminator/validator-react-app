@@ -90,7 +90,7 @@ export default class UserProvider extends PureComponent<{}, UserProviderState> {
     network: '',
     web3: DEFAULT_WEB3,
     account: '',
-    balance: '-',
+    balance: '',
     validators: [],
     validatorGroups: [],
     loginMetamask: () => this.loginMetamask(),
